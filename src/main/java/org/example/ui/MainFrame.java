@@ -1,6 +1,5 @@
 package org.example.ui;
 
-import org.example.Test;
 import org.example.services.maps.MapName;
 import org.example.services.maps.MapService;
 import org.example.ui.maps.main.MainMap;
@@ -12,7 +11,7 @@ import java.awt.*;
 public class MainFrame extends JFrame {
 
     private static CardLayout cardLayout = new CardLayout();
-    private static JPanel mainPanel=new JPanel(cardLayout);
+    private static JPanel mainPanel = new JPanel(cardLayout);
 
     public MainFrame() throws HeadlessException {
         this.initFrame();
@@ -25,14 +24,14 @@ public class MainFrame extends JFrame {
     private void initFrame() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("Eras of Empire");
-        setSize(screenSize.width/2, screenSize.height/2);
+        setSize(screenSize.width / 2, screenSize.height / 2);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(true);
     }
 
-    public void loadLevels(){
-        mainPanel.add(new MainMap(MapName.WELCOME_MAP,getWidth(),getHeight()),MapName.WELCOME_MAP);
+    public void loadLevels() {
+        mainPanel.add(new MainMap(getWidth(), getHeight()), MapName.WELCOME_MAP);
     }
 
     public static void changePanel(String title) {

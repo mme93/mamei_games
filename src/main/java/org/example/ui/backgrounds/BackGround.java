@@ -24,7 +24,6 @@ public class BackGround {
         backgroundImage = icon.getImage();
     }
 
-
     public void drawBackground(Graphics g) {
         int numTilesX = (int) Math.ceil((double) width / tileSize);
         int numTilesY = (int) Math.ceil((double) height / tileSize);
@@ -33,10 +32,6 @@ public class BackGround {
                 g.drawImage(backgroundImage, x * tileSize, y * tileSize, tileSize, tileSize, null);
             }
         }
-    }
-
-    public Image getBackgroundImage() {
-        return this.backgroundImage;
     }
 
 }

@@ -18,27 +18,7 @@ public class MapElements {
         this.elementImage = elementImage;
     }
 
-    public void draw(Graphics g){
-        g.drawImage(getElementImage(), getX_pos(), getY_pos(), getWidth(), getHeight(), null);
-    }
-
-    public int getX_pos() {
-        return x_pos;
-    }
-
-    public int getY_pos() {
-        return y_pos;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public Image getElementImage() {
-        return elementImage;
+    public void draw(Graphics g) {
+        g.drawImage(elementImage, x_pos, y_pos, width, height, null);
     }
 }
