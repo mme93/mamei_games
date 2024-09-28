@@ -1,7 +1,7 @@
-package org.example.ui.backgrounds.dust;
+package org.example.ui.maps.backgrounds.dust;
 
-import org.example.ui.backgrounds.BackGround;
-import org.example.ui.backgrounds.imageIcons.BackGroundImageIcons;
+import org.example.ui.maps.backgrounds.BackGround;
+import org.example.ui.maps.backgrounds.imageIcons.BackGroundImageIcons;
 
 
 public class Dust extends BackGround {

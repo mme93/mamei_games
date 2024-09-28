@@ -1,6 +1,6 @@
 package org.example.ui.maps.main;
 
-import org.example.ui.backgrounds.dust.Dust;
+import org.example.ui.maps.backgrounds.dust.Dust;
 import org.example.ui.maps.elements.mushrooms.Mushrooms;
 import org.example.ui.maps.BasicMap;
 

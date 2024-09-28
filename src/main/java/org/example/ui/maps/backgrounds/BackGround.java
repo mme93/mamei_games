@@ -1,4 +1,4 @@
-package org.example.ui.backgrounds;
+package org.example.ui.maps.backgrounds;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,7 +1,7 @@
-package org.example.ui.backgrounds.gras;
+package org.example.ui.maps.backgrounds.gras;
 
-import org.example.ui.backgrounds.BackGround;
-import org.example.ui.backgrounds.imageIcons.BackGroundImageIcons;
+import org.example.ui.maps.backgrounds.BackGround;
+import org.example.ui.maps.backgrounds.imageIcons.BackGroundImageIcons;
 
 public class Gras extends BackGround {
 

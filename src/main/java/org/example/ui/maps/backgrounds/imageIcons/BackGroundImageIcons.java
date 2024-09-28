@@ -1,4 +1,4 @@
-package org.example.ui.backgrounds.imageIcons;
+package org.example.ui.maps.backgrounds.imageIcons;
 
 import javax.swing.*;
 

@@ -16,15 +16,17 @@ public class MainFrame extends JFrame {
     public MainFrame() throws HeadlessException {
         this.initFrame();
         MapService mapService = new MapService();
-        mainPanel.add(mapService.loadMenu(), "Menu");
+        //mainPanel.add(mapService.loadMenu(), "Menu");
+        mainPanel.add(new MainMap(getWidth(), getHeight()), MapName.WELCOME_MAP);
         add(mainPanel);
-        this.cardLayout.show(mainPanel, "Menu");
+        this.cardLayout.show(mainPanel, MapName.WELCOME_MAP);
+        //this.cardLayout.show(mainPanel, "Menu");
     }
 
     private void initFrame() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("Eras of Empire");
-        setSize(screenSize.width / 2, screenSize.height / 2);
+        setSize(screenSize.width, screenSize.height);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(true);
