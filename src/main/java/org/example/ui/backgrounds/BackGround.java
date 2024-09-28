@@ -3,7 +3,7 @@ package org.example.ui.backgrounds;
 import javax.swing.*;
 import java.awt.*;
 
-public class BackGround extends JPanel{
+public class BackGround extends JPanel {
 
     private Image backgroundImage;
     private final int tileSize = 32;
@@ -22,7 +22,7 @@ public class BackGround extends JPanel{
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
+        System.err.println("Paint");
         int numTilesX = (int) Math.ceil((double) getWidth() / tileSize);
         int numTilesY = (int) Math.ceil((double) getHeight() / tileSize);
 
@@ -31,6 +31,10 @@ public class BackGround extends JPanel{
                 g.drawImage(backgroundImage, x * tileSize, y * tileSize, tileSize, tileSize, this);
             }
         }
+    }
+
+    public Image getBackgroundImage() {
+        return this.backgroundImage;
     }
 
 }
