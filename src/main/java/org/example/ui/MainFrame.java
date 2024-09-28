@@ -17,8 +17,7 @@ public class MainFrame extends JFrame {
     public MainFrame() throws HeadlessException {
         this.initFrame();
         MapService mapService = new MapService();
-        mainPanel.add(new Test("Menu"), "Menu");
-        //mainPanel.add(mapService.loadMenu(), "Menu");
+        mainPanel.add(mapService.loadMenu(), "Menu");
         add(mainPanel);
         this.cardLayout.show(mainPanel, "Menu");
     }
