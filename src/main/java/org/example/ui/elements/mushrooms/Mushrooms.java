@@ -17,7 +17,7 @@ public class Mushrooms extends Elements {
 
     public void draw(Graphics g) {
         if (mushroomImage != null) {
-            g.drawImage(mushroomImage, x, y, null);
+            g.drawImage(mushroomImage, getX(), getY(), null);
         } else {
             System.out.println("Mushroom image is null");
         }
