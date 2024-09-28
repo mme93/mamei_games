@@ -1,8 +1,9 @@
 package org.example.ui;
 
+import org.example.Test;
 import org.example.services.maps.MapName;
 import org.example.services.maps.MapService;
-import org.example.ui.maps.WelcomeMap;
+import org.example.ui.maps.main.MainMap;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +17,8 @@ public class MainFrame extends JFrame {
     public MainFrame() throws HeadlessException {
         this.initFrame();
         MapService mapService = new MapService();
-        mainPanel.add(mapService.loadMenu(), "Menu");
+        mainPanel.add(new Test("Menu"), "Menu");
+        //mainPanel.add(mapService.loadMenu(), "Menu");
         add(mainPanel);
         this.cardLayout.show(mainPanel, "Menu");
     }
@@ -31,7 +33,7 @@ public class MainFrame extends JFrame {
     }
 
     public void loadLevels(){
-        mainPanel.add(new WelcomeMap(MapName.WELCOME_MAP),MapName.WELCOME_MAP);
+        mainPanel.add(new MainMap(MapName.WELCOME_MAP),MapName.WELCOME_MAP);
     }
 
     public static void changePanel(String title) {
