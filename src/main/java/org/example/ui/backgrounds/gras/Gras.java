@@ -5,7 +5,7 @@ import org.example.ui.backgrounds.imageIcons.BackGroundImageIcons;
 
 public class Gras extends BackGround {
 
-    public Gras() {
-        super(BackGroundImageIcons.grasBackGround);
+    public Gras(int tileSize, int width, int height) {
+        super(BackGroundImageIcons.grasBackGround,tileSize,width,height);
     }
 }

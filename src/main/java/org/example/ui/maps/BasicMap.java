@@ -26,22 +26,7 @@ public class BasicMap extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (background != null && background.getBackgroundImage() != null) {
-
-
-            g.drawImage(background.getBackgroundImage(), 0, 0, getWidth(), getHeight(), null);
-
-            int numTilesX = (int) Math.ceil((double) getWidth() / 32);
-            int numTilesY = (int) Math.ceil((double) getHeight() / 32);
-
-            for (int x = 0; x < numTilesX; x++) {
-                for (int y = 0; y < numTilesY; y++) {
-                    g.drawImage(background.getBackgroundImage(), x * 32, y * 32, 32, 32, this);
-                }
-            }
-
-        }
-
+        background.drawBackground(g);
         for (MapElements elements : elements) {
             elements.draw(g);
         }

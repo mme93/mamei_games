@@ -32,7 +32,7 @@ public class MainFrame extends JFrame {
     }
 
     public void loadLevels(){
-        mainPanel.add(new MainMap(MapName.WELCOME_MAP),MapName.WELCOME_MAP);
+        mainPanel.add(new MainMap(MapName.WELCOME_MAP,getWidth(),getHeight()),MapName.WELCOME_MAP);
     }
 
     public static void changePanel(String title) {

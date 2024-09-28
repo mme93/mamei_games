@@ -6,9 +6,9 @@ import org.example.ui.maps.BasicMap;
 
 public class MainMap extends BasicMap {
 
-    public MainMap(String backgroundTitle) {
-        super(backgroundTitle, new Dust());
-        addElement(new Mushrooms(100, 150,32,32));
-        addElement(new Mushrooms(200, 250, 32,32));
+    public MainMap(String backgroundTitle, int width, int height) {
+        super(backgroundTitle, new Dust(32, width, height));
+        addElement(new Mushrooms(100, 150, 32, 32));
+        addElement(new Mushrooms(200, 250, 32, 32));
     }
 }
