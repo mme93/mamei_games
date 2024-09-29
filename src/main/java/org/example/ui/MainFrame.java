@@ -2,6 +2,7 @@ package org.example.ui;
 
 import org.example.services.maps.MapName;
 import org.example.services.maps.MapService;
+import org.example.ui.editor.MapEditor;
 import org.example.ui.maps.main.MainMap;
 
 import javax.swing.*;
@@ -32,6 +33,10 @@ public class MainFrame extends JFrame {
 
     public void loadLevels() {
         mainPanel.add(new MainMap(getWidth(), getHeight()), MapName.MAIN_MAP);
+    }
+
+    public void loadSettings(){
+        mainPanel.add(new MapEditor(),MapEditor.MAP_EDITOR);
     }
 
     public static void changePanel(String title) {

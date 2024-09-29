@@ -2,6 +2,7 @@ package org.example.ui.menu;
 
 import org.example.services.maps.MapName;
 import org.example.ui.MainFrame;
+import org.example.ui.editor.MapEditor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,6 +36,9 @@ public class Menu extends JPanel {
             MainFrame.changePanel(MapName.MAIN_MAP);
         });
         optionsButton.addActionListener(e -> System.out.println("Optionen werden geöffnet..."));
+        editorButton.addActionListener(e -> {
+            MainFrame.changePanel(MapEditor.MAP_EDITOR);
+        });
         exitButton.addActionListener(e -> System.exit(0));
 
         buttonPanel.add(startButton);

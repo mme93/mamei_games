@@ -11,6 +11,7 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             MainFrame frame = new MainFrame();
             frame.loadLevels();
+            frame.loadSettings();
             frame.setVisible(true);
         });
     }
