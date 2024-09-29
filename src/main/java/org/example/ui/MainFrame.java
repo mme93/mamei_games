@@ -16,11 +16,9 @@ public class MainFrame extends JFrame {
     public MainFrame() throws HeadlessException {
         this.initFrame();
         MapService mapService = new MapService();
-        //mainPanel.add(mapService.loadMenu(), "Menu");
-        mainPanel.add(new MainMap(getWidth(), getHeight()), MapName.WELCOME_MAP);
+        mainPanel.add(mapService.loadMenu(), "Menu");
         add(mainPanel);
-        this.cardLayout.show(mainPanel, MapName.WELCOME_MAP);
-        //this.cardLayout.show(mainPanel, "Menu");
+        this.cardLayout.show(mainPanel, "Menu");
     }
 
     private void initFrame() {
@@ -33,7 +31,7 @@ public class MainFrame extends JFrame {
     }
 
     public void loadLevels() {
-        mainPanel.add(new MainMap(getWidth(), getHeight()), MapName.WELCOME_MAP);
+        mainPanel.add(new MainMap(getWidth(), getHeight()), MapName.MAIN_MAP);
     }
 
     public static void changePanel(String title) {

@@ -50,7 +50,6 @@ public class BasicMap extends JPanel {
 
 
     private void moveFigure(KeyEvent e) {
-        System.err.println(e.getKeyCode());
         switch (e.getKeyCode()) {
             case KeyEvent.VK_W: // Move Up
                 figure.move(0, -5);

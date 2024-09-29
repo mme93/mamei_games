@@ -23,20 +23,23 @@ public class Menu extends JPanel {
 
         JButton startButton = new JButton("Spiel starten");
         JButton optionsButton = new JButton("Optionen");
+        JButton editorButton = new JButton("Editor");
         JButton exitButton = new JButton("Beenden");
 
         startButton.setPreferredSize(new Dimension(200, 50));
         optionsButton.setPreferredSize(new Dimension(200, 50));
+        editorButton.setPreferredSize(new Dimension(200, 50));
         exitButton.setPreferredSize(new Dimension(200, 50));
 
         startButton.addActionListener(e -> {
-            MainFrame.changePanel(MapName.WELCOME_MAP);
+            MainFrame.changePanel(MapName.MAIN_MAP);
         });
         optionsButton.addActionListener(e -> System.out.println("Optionen werden geöffnet..."));
         exitButton.addActionListener(e -> System.exit(0));
 
         buttonPanel.add(startButton);
         buttonPanel.add(optionsButton);
+        buttonPanel.add(editorButton);
         buttonPanel.add(exitButton);
         buttonPanel.setBackground(Color.LIGHT_GRAY);
 
