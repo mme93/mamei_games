@@ -7,6 +7,8 @@ import org.example.ui.maps.elements.MapElements;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -21,13 +23,7 @@ public class BasicMap extends JPanel {
     public BasicMap(BackGround background) {
         this.background = background;
         figure = generateMainFigure();
-        setFocusable(true);
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                moveFigure(e);
-            }
-        });
+        initKeyListener();
     }
 
     public void addElement(MapElements element) {
@@ -48,22 +44,41 @@ public class BasicMap extends JPanel {
         return new MainFigure(50, 50, getWidth(), getHeight(), FigureImageIcons.mushroomIcon.getImage());
     }
 
+    private void initKeyListener() {
+        setFocusable(true);
+        requestFocusInWindow();
+        bindKeyToAction(KeyEvent.VK_W, "moveUp", e -> moveFigure("up"));
+        bindKeyToAction(KeyEvent.VK_A, "moveLeft", e -> moveFigure("left"));
+        bindKeyToAction(KeyEvent.VK_S, "moveDown", e -> moveFigure("down"));
+        bindKeyToAction(KeyEvent.VK_D, "moveRight", e -> moveFigure("right"));
+    }
 
-    private void moveFigure(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_W: // Move Up
+    private void bindKeyToAction(int keyCode, String actionName, ActionListener action) {
+        getInputMap(WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(keyCode, 0), actionName);
+        getActionMap().put(actionName, new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                action.actionPerformed(e);
+            }
+        });
+    }
+
+    private void moveFigure(String direction) {
+        switch (direction) {
+            case "up":
                 figure.move(0, -5);
                 break;
-            case KeyEvent.VK_A: // Move Left
-                figure.move(-5, 0);
-                break;
-            case KeyEvent.VK_S: // Move Down
+            case "down":
                 figure.move(0, 5);
                 break;
-            case KeyEvent.VK_D: // Move Right
+            case "left":
+                figure.move(-5, 0);
+                break;
+            case "right":
                 figure.move(5, 0);
                 break;
         }
         this.repaint();
     }
+
 }

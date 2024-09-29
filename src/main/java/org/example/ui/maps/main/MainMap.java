@@ -4,6 +4,9 @@ import org.example.ui.maps.backgrounds.dust.Dust;
 import org.example.ui.maps.elements.mushrooms.Mushrooms;
 import org.example.ui.maps.BasicMap;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+
 public class MainMap extends BasicMap {
 
     public MainMap(int width, int height) {
